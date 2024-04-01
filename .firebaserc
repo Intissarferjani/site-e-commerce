@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "handiservice-3cff8"
+  },
+  "targets": {
+    "handiservice-3cff8": {
+      "hosting": {
+        "final": [
+          "handiservice-3cff8"
+        ]
+      }
+    }
+  }
+}

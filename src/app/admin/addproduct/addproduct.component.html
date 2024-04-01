@@ -1,0 +1,36 @@
+<div class="container">
+  <h2>Add Product</h2>
+  <button class="btn btn-primary my-3" routerLink="/admin/product">Back</button>
+  <form (ngSubmit)="addProduct()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="product.name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea class="form-control" id="description" [(ngModel)]="product.description" name="description" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="number" class="form-control" id="price" [(ngModel)]="product.price" name="price" required>
+    </div>
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input type="number" class="form-control" id="quantity" [(ngModel)]="product.quantity" name="quantity" required>
+    </div>
+    <div class="form-group">
+      <label for="image">Image:</label>
+      <input type="file" class="form-control-file" id="image" (change)="onFileSelected($event)" accept="image/*">
+    </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <select class="form-control" id="category" [(ngModel)]="product.category" name="category" required>
+        <option value="">Select a category</option>
+        <option value="category1">Category 1</option>
+        <option value="category2">Category 2</option>
+        <!-- Add other category options here if necessary -->
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+  </form>
+</div>

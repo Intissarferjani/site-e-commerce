@@ -1,0 +1,56 @@
+<!-- Add Promotion Form -->
+<form (ngSubmit)="addPromotion()">
+    <input type="text" [(ngModel)]="newPromotionForm.title" name="title" placeholder="Titre">
+    <input type="text" [(ngModel)]="newPromotionForm.description" name="description" placeholder="Description">
+    <input type="number" [(ngModel)]="newPromotionForm.discount" name="discount" placeholder="Réduction (%)">
+    <button type="submit">Ajouter Promotion</button>
+  </form>
+  
+
+  <div class="card-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>title</th>
+                <th>Description</th>
+                <th>discount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let promotion of promotions">
+                <td>{{ promotion.id }}</td>
+                <td>{{ promotion.title }}</td>
+                <td>{{ promotion.description }}</td>
+                <td>{{ promotion.discount }}</td>
+                <td>
+                    <div class="example-button-container">
+                        <button mat-mini-fab color="green" (click)="updatePromotion(promotion.key, promotion)">Edit</button>
+                        <button mat-mini-fab color="green" (click)="deletePromotion(promotion.key)">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<div *ngFor="let promotion of promotions">
+    <!-- Affichage des détails de la promotion -->
+    <div>{{ promotion.title }}</div>
+    <div>{{ promotion.description }}</div>
+    <div>{{ promotion.discount }}</div>
+
+    <!-- Formulaire de mise à jour caché par défaut -->
+    <form [hidden]="promotion.editMode" (submit)="updatePromotion(promotion.key, updatePromotionForms[promotion.key])">
+        <input type="text" [(ngModel)]="updatePromotionForms[promotion.key].title" name="title" placeholder="Titre">
+        <input type="text" [(ngModel)]="updatePromotionForms[promotion.key].description" name="description" placeholder="Description">
+        <input type="number" [(ngModel)]="updatePromotionForms[promotion.key].discount" name="discount" placeholder="Réduction (%)">
+        <button type="submit">Enregistrer</button>
+    </form>
+
+    <!-- Bouton pour activer le mode édition -->
+    <button (click)="toggleEditMode(promotion)">Edit</button>
+</div>

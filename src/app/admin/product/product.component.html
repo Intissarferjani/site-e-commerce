@@ -1,0 +1,48 @@
+<!-- Champ de recherche -->
+<div class="search">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search for products...">
+    <button (click)="searchProduct()">Search</button>
+</div>
+
+<div class="card-container">
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">All Products</h6>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <!-- Tableau des produits -->
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <!-- Affichage des détails du produit -->
+            <td>{{ product.id }}</td>
+            <td><img [src]="product.imageUrl" alt="{{ product.name }}"></td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ product.category }}</td>
+            <td>
+              <div class="example-button-container">
+                <button mat-mini-fab color="green" (click)="deleteProduct(product.id ? product.id : '')">Delete</button>
+                <button mat-mini-fab color="green" (click)="editProduct(product.id)">Edit</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

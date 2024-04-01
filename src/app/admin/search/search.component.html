@@ -1,0 +1,12 @@
+<!-- Display search results -->
+<div *ngIf="searchResults && searchResults.length > 0">
+    <div *ngFor="let product of searchResults">
+        <p>{{ product.name }}</p>
+        <!-- Affichez les autres détails du produit selon votre besoin -->
+    </div>
+</div>
+
+<!-- Message if no results found -->
+<div *ngIf="!searchResults || searchResults.length === 0">
+    <p>No results found</p>
+</div>

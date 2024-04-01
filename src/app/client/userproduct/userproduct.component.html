@@ -1,0 +1,21 @@
+<!-- userproduct.component.html -->
+<div class="card-container" style="margin-left: 100px; margin-top:100px">
+  <div class="cart-btn" *ngFor="let product of products">
+    <div class="card">
+      <div class="card-img">
+        <div class="img">
+          <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image">
+        </div>
+      </div>
+      <div class="card-title">{{ product.name }}</div>
+      <div class="card-subtitle">{{ product.description }}</div>
+      <hr class="card-divider">
+      <div class="card-footer">
+        <div class="card-price"><span>$</span> {{ product.price }}</div>
+        <button class="card-btn" (click)="addToCart(product)">
+          Ajouter au panier
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

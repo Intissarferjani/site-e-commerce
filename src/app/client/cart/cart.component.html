@@ -1,0 +1,22 @@
+<div class="cart-container">
+  <h2>Votre Panier</h2>
+
+  <div class="cart-item" *ngFor="let item of cartItems">
+    <img [src]="item.imageUrl" alt="{{ item.name }}" class="cart-item-image">
+    <div class="cart-item-details">
+      <div class="cart-item-title">{{ item.name }}</div>
+      <div class="cart-item-price"><span>$</span> {{ item.price }}</div>
+      <div *ngIf="item.quantity > 1">
+        <span>Quantité: </span>
+        {{ item.quantity }}
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-total">
+    <span>Total: </span>
+    <span>$</span> {{ calculateTotal() }}
+  </div>
+
+  <button class="cart-checkout">Commander</button>
+</div>

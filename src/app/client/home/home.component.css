@@ -1,0 +1,7 @@
+.header-right i {
+    margin-right: 10px; /* Ajoute 10 pixels d'espace à droite de chaque icône */
+}
+
+.header-right i:last-child {
+    margin-right: 0; /* Supprime la marge de la dernière icône */
+}

@@ -1,0 +1,31 @@
+<div class="card-container">
+<div class="card-body">
+<div class="liste-commandes">
+    <div class="card-header py-3">
+        <h2  class="m-0 font-weight-bold text-primary">liste de commande</h2>
+      </div>
+    <ul>
+      <li *ngFor="let command of commands">
+        {{ command.name }} - {{ command.description }} - {{ command.price }}
+        <button (click)="deleteCommand(command.id)">Supprimer</button>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="formulaire-ajout">
+    <div class="card shadow mb-4"></div>
+    <div class="card-header py-3">
+    <h2  class="m-0 font-weight-bold text-primary">Ajouter une commande</h2>
+  </div>
+    <form (ngSubmit)="addCommand()">
+      <label>Nom:</label>
+      <input type="text" name="name" [(ngModel)]="newCommand.name" required>
+      <label>Description:</label>
+      <input type="text" name="description" [(ngModel)]="newCommand.description" required>
+      <label>Prix:</label>
+      <input type="number" name="price" [(ngModel)]="newCommand.price" required>
+      <button type="submit">Ajouter</button>
+    </form>
+  </div>
+</div>
+</div>

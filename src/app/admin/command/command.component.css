@@ -1,0 +1,64 @@
+/* Style pour la liste des commandes */
+.liste-commandes {
+    margin-bottom: 20px;
+  }
+  
+  .liste-commandes h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .liste-commandes ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .liste-commandes li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .liste-commandes button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  /* Style pour le formulaire d'ajout de commande */
+  .formulaire-ajout {
+    margin-bottom: 20px;
+  }
+  
+  .formulaire-ajout h2 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .formulaire-ajout label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .formulaire-ajout input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .formulaire-ajout button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
